@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Mile High Nomad Group — documentation theme
+   --------------------------------------------------------------------------
+   Mintlify automatically includes any .css file that sits in the content
+   directory (the folder holding docs.json). There is no key to add in
+   docs.json and nothing to import from MDX.
+
+   Brand tokens below are the shared scale from
+   packages/config/tailwind/index.ts, which app_mhng and vercel_mhng both
+   build on. Keep these in sync with that file.
+
+   NOTE: Mintlify's internal CSS custom properties (--primary, --gray-*, etc.)
+   are observed, not a documented contract — they can change without notice.
+   Everything here degrades safely: if a variable stops being honoured, the
+   colors in docs.json still drive the theme.
+   ========================================================================== */
+
+:root {
+  /* Shared brand scale — packages/config/tailwind/index.ts */
+  --mhng-50: #f0f7ff;
+  --mhng-100: #e0effe;
+  --mhng-200: #bae0fd;
+  --mhng-300: #7cc8fb;
+  --mhng-400: #36adf6;
+  --mhng-500: #0c93e7;
+  --mhng-600: #0074c5; /* primary */
+  --mhng-700: #015ca0;
+  --mhng-800: #064f84;
+  --mhng-900: #0b426e;
+  --mhng-950: #072a49; /* deepest navy — app_mhng sidebar */
+
+  /* Logo palette — sampled from the Adventure Theme mark */
+  --mhng-logo-navy: #1c2448;
+  --mhng-logo-blue: #184e8d;
+  --mhng-logo-slate: #9599a5;
+  --mhng-logo-snow: #fafafb;
+
+  /* Mintlify expects space-separated RGB triples, not hex. */
+  --primary: 0 116 197;
+  --primary-light: 54 173 246;
+  --primary-dark: 1 92 160;
+  --background-light: 252 252 252;
+  --background-dark: 7 42 73;
+}
+
+/* --------------------------------------------------------------------------
+   Typography — match the 0.625rem radius and tight headings used across
+   vercel_mhng and app_mhng.
+   -------------------------------------------------------------------------- */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   Surfaces — soften Mintlify's default corners toward the marketing site's
+   --radius: 0.625rem, and give cards a brand-tinted hover instead of a lift.
+   -------------------------------------------------------------------------- */
+
+card {
+  border-radius: 0.625rem;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+card:hover {
+  border-color: rgb(var(--primary) / 0.45);
+}
+
+[data-component-part='card-icon'] {
+  color: rgb(var(--primary));
+}
+
+/* Sidebar / tab active state picks up the brand blue rather than the theme default. */
+.nav-tabs-item[data-active] {
+  border-bottom-color: rgb(var(--primary));
+  color: rgb(var(--primary));
+}
+
+/* --------------------------------------------------------------------------
+   Callouts — tint the info callout with the brand blue so Note/Info blocks
+   read as MHNG rather than generic Mintlify.
+   -------------------------------------------------------------------------- */
+
+info,
+note {
+  border-left-color: rgb(var(--primary));
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar footer — the navbar links (Support, Contact us) render as a list
+   pinned to the bottom of #sidebar. The assistant's floating button is
+   position:fixed at z-index 999 in that same corner, so by default it sits on
+   top of them and clips the start of each label.
+
+   Reserve room beneath the list so both links clear the button.
+   #sidebar has exactly two children: div#sidebar-content and this list.
+   -------------------------------------------------------------------------- */
+
+#sidebar > ul:last-child {
+  padding-bottom: 4.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode — sit the page on the deep brand navy so the white logo lockup
+   and the mountain mark share a background with app_mhng's sidebar.
+   -------------------------------------------------------------------------- */
+
+.dark {
+  --primary: 54 173 246;
+  --primary-light: 124 200 251;
+  --primary-dark: 12 147 231;
+}

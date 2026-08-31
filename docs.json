@@ -1,54 +1,129 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "theme": "maple",
+  "name": "Mile High Nomad Group",
+  "description": "Documentation for Mile High Nomad Group — a compliance-native data engineering, AI, and automation consultancy. Platform architecture, shared packages, and our security and privacy posture.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0074C5",
+    "light": "#36ADF6",
+    "dark": "#015CA0"
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://www.mhng.tech"
   },
   "favicon": "/favicon.svg",
+  "appearance": {
+    "default": "system"
+  },
+  "background": {
+    "color": {
+      "light": "#FCFCFC",
+      "dark": "#072A49"
+    },
+    "decoration": "gradient"
+  },
+  "fonts": {
+    "family": "Geist"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs",
+    "codeblocks": "dark"
+  },
   "navigation": {
     "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
+      "index"
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Website",
+          "href": "https://www.mhng.tech",
+          "icon": "globe"
+        },
+        {
+          "anchor": "Services",
+          "href": "https://www.mhng.tech/services",
+          "icon": "briefcase"
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://www.mhng.tech/blog",
           "icon": "newspaper"
         }
       ]
     }
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:info@mhng.tech"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Contact us",
+      "href": "https://www.mhng.tech/contact"
     }
+  },
+  "footer": {
+    "socials": {
+      "website": "https://www.mhng.tech",
+      "github": "https://github.com/milehighnomadgrouptech",
+      "linkedin": "https://www.linkedin.com/in/loganbanks303/"
+    },
+    "links": [
+      {
+        "header": "Company",
+        "items": [
+          {
+            "label": "About",
+            "href": "https://www.mhng.tech/about"
+          },
+          {
+            "label": "Services",
+            "href": "https://www.mhng.tech/services"
+          },
+          {
+            "label": "Contact",
+            "href": "https://www.mhng.tech/contact"
+          }
+        ]
+      },
+      {
+        "header": "Legal",
+        "items": [
+          {
+            "label": "Privacy Policy",
+            "href": "https://www.mhng.tech/privacy"
+          },
+          {
+            "label": "Terms of Service",
+            "href": "https://www.mhng.tech/terms"
+          }
+        ]
+      },
+      {
+        "header": "Security",
+        "items": [
+          {
+            "label": "Report a vulnerability",
+            "href": "mailto:security@mhng.tech"
+          }
+        ]
+      }
+    ]
+  },
+  "search": {
+    "prompt": "Search MHNG documentation"
+  },
+  "seo": {
+    "indexing": "navigable"
   },
   "contextual": {
     "options": [
@@ -56,17 +131,9 @@
       "view",
       "chatgpt",
       "claude",
-      "perplexity",
       "mcp",
       "cursor",
       "vscode"
     ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
   }
 }
